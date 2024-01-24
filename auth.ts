@@ -56,6 +56,7 @@ export const {
       // Prevent sign in without email verification
       //   if (!existingUser?.emailVerified) return false;
     },
+    //@ts-ignore
     async session({ token, session }) {
       if (token.sub && session.user) {
         session.user.id = token.sub;

@@ -24,7 +24,7 @@ export default function Home() {
             </h2>
             <Form />
             <p className="text-xs text-gray-500 mt-3">
-              Literally you probably haven't heard of them jean shorts.
+              If you dont have login ask HR
             </p>
           </div>
         </div>

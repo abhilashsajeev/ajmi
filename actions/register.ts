@@ -28,11 +28,10 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
   await db.user.create({
     data: {
       email: email,
-      phone_number: phone_number,
       name: email,
       password: hashedPassword,
       activated: "N",
-      role: "I",
+      role: "G",
       is_oauth: false,
     },
   });
