@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model User {
+  id            String        @id @default(cuid())
+  name          String?       @db.VarChar(50)
+  emailVerified DateTime?
+  image         String?
+  password      String?       @db.VarChar(255)
+  activated     String?       @default("N") @db.Char
+  role          String        @default("G") @db.Char
+  email         String        @unique @db.VarChar
+  is_oauth      Boolean?      @default(true)
+  account       Account[]
+  details       UserDetails[]
+}
+
+model UserDetails {
+  id            String    @id @default(cuid())
+  user_id       String
+  name          String    @db.VarChar(50)
+  home_address  String
+  work_address  String?
+  phone_number  String?   @db.VarChar(20)
+  date_of_birth DateTime? @db.Date
+  date_of_join  DateTime  @db.Date
+  date_relieved DateTime? @db.Date
+  post_id       String?
+  salary        Int?
+  country       String    @default("INDIA")
+  salary_unit   String    @default("OMAN")
+  crated_date   DateTime  @db.Date
+  created_by    String
+  
+  user          User      @relation(fields: [user_id], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
