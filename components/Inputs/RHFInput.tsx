@@ -18,7 +18,7 @@ export default function RHFInput({
   label = "",
   name = "",
   widthClass = "w-full",
-  placeholder = "Type here",
+  placeholder = "",
 }: RHFInputProps) {
   return (
     <label
@@ -34,7 +34,7 @@ export default function RHFInput({
           <input
             {...field}
             type={type}
-            placeholder={placeholder}
+            placeholder={placeholder === "" ? label : placeholder}
             className={`input input-bordered ${
               errors[name] && "input-error"
             } w-full max-w-xs`}
