@@ -10,16 +10,10 @@ import { FcGoogle } from "react-icons/fc";
 import { login } from "@/actions/login";
 import { toast } from "sonner";
 import { MdLogin } from "react-icons/md";
-import { useSearchParams } from "next/navigation";
 
 export default function Form() {
   const [isPending, startTransition] = useTransition();
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl");
-  const urlError =
-    searchParams.get("error") === "OAuthAccountNotLinked"
-      ? "Email already in use with different provider!"
-      : "";
+
   const methods = useForm({
     resolver: zodResolver(LoginSchema),
     defaultValues: LoginDefaults,
@@ -31,7 +25,7 @@ export default function Form() {
   } = methods;
   async function onSubmit(values: z.infer<typeof LoginSchema>) {
     startTransition(() => {
-      login(values, callbackUrl)
+      login(values)
         .then((data) => {
           if (data?.error) {
             methods.reset();
