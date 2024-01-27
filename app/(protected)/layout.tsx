@@ -1,5 +1,6 @@
 import { FaSignOutAlt, FaUserAlt } from "react-icons/fa";
 import UserDropDown from "./_components/UserDropDownItem";
+import Link from "next/link";
 
 export default function LayoutPage({
   children,
@@ -41,7 +42,7 @@ export default function LayoutPage({
                   <a>Project </a>
                 </li>
                 <li>
-                  <a>Sidebar Item 2</a>
+                  <Link href="/user_manager">User Manage</Link>
                 </li>
               </ul>
             </div>

@@ -1,27 +1,28 @@
 import { Controller } from "react-hook-form";
+import { getNestedError } from "./RHFInput";
 
-export interface RHFInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface RHFTextAreaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   control: any;
   label: string;
   errors?: any;
   widthClass?: string;
-  type?: string;
   name: string;
   placeholder?: string;
   labelClass?: string;
+  rows?: number; // Add rows prop for textarea
 }
 
-export default function RHFInput({
+export default function RHFTextArea({
   control = {},
   errors = {},
-  type = "text",
   label = "",
   name = "",
   widthClass = "w-full",
   labelClass = "",
   placeholder = "",
-}: RHFInputProps) {
+  rows = 3, // Default rows for textarea
+}: RHFTextAreaProps) {
   const error = getNestedError(errors, name);
   return (
     <label
@@ -34,12 +35,12 @@ export default function RHFInput({
         name={name}
         control={control}
         render={({ field }) => (
-          <input
+          <textarea
             {...field}
-            type={type}
+            rows={rows} // Set rows attribute for textarea
             placeholder={placeholder === "" ? label : placeholder}
             className={`input input-bordered ${
-              error && "input-error"
+              error?.message && "input-error"
             } w-full max-w-xs`}
           />
         )}
@@ -47,19 +48,9 @@ export default function RHFInput({
 
       {error && (
         <div className="label">
-          <span className="label-text-alt">{error?.message}</span>
+          <span className={`label-text-alt`}>{error?.message}</span>
         </div>
       )}
     </label>
   );
-}
-
-export function getNestedError(errors: any, name: string): any | undefined {
-  const parts = name.split(".");
-  let current = errors;
-  for (let i = 0; i < parts.length; i++) {
-    if (!current) return undefined;
-    current = current[parts[i]];
-  }
-  return current;
 }
