@@ -36,7 +36,7 @@ export function PortFolioRight({
             <div className="text-blue-700 text-2xl max-md:max-w-full">
               {String(index).padStart(2, "0")}
             </div>
-            <div className="mt-7 text-neutral-900 text-2xl max-md:max-w-full">
+            <div className="mt-7 text-neutral-900 text-2xl max-md:max-w-full drop-shadow-sm">
               {title}
             </div>
             <div className="mt-9 text-base font-medium leading-6 text-neutral-500 max-md:max-w-full">
