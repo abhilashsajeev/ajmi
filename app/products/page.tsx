@@ -1,3 +1,5 @@
+import ProductParent from "@/components/Products/ProductParent";
+
 export default function Products() {
   return (
     <>
@@ -11,6 +13,7 @@ export default function Products() {
           SNEAK PEAK INTO OUR COLLECTIONS
         </div>
       </div>
+      <ProductParent />
     </>
   );
 }
