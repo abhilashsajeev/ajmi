@@ -1,4 +1,9 @@
 import * as React from "react";
+import { Manrope } from "next/font/google";
+
+const manrope = Manrope({
+  display: "swap",
+});
 
 interface ImageProps {
   src: string;
@@ -25,7 +30,7 @@ interface TextContentProps {
 const TextContent: React.FC<TextContentProps> = ({ title, content, index }) => (
   <div className="flex flex-col px-5 text-black max-md:mt-10 max-md:max-w-full">
     <div className="flex gap-5 tracking-normal max-md:flex-wrap max-md:max-w-full">
-      <h2 className="flex-auto text-3xl font-bold leading-10 uppercase">
+      <h2 className="flex-auto text-3xl font-bold leading-8 uppercase drop-shadow-md tracking-tighter">
         {title}
       </h2>
       <div className="flex-auto my-auto text-xl font-medium leading-10 text-zinc-400">
@@ -63,7 +68,7 @@ export function ServicesDescRight({
   index,
 }: ServiceDescWithIndex) {
   return (
-    <div className="p-10">
+    <div className={`p-10 ${manrope.className}`}>
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
           <TextContent
