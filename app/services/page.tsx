@@ -9,7 +9,7 @@ export default function Services() {
         </div>
       </div>
       <div className="flex justify-center items-center ">
-        <div className="justify-center pt-10 pb-20 w-3/4 text-3xl font-black tracking-tight leading-10 text-center uppercase text-stone-900 z-30">
+        <div className="justify-center pt-10 pb-20 w-3/4 text-5xl font-black tracking-tight leading-10 text-center uppercase text-stone-900 z-30">
           what we offer
         </div>
       </div>
