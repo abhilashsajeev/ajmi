@@ -12,7 +12,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   material,
 }) => {
   return (
-    <div className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
+    <div className="flex flex-col w-[32%] items-center max-md:ml-0 max-md:w-full">
       <div className="flex flex-col grow justify-center max-md:mt-10 max-md:max-w-full">
         <div className="flex overflow-hidden relative flex-col items-end px-16 pt-20 pb-9 w-full min-h-[670px] max-md:pl-5 max-md:max-w-full">
           <img
@@ -34,9 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               <span className="my-auto text-xs font-extrabold leading-4 text-black">
                 learn more
               </span>
-              <span className="text-xs font-black leading-6 text-blue-700">
-                {" "}
-              </span>
+              <span className="text-xs font-black leading-6 text-blue-700"></span>
             </div>
           </div>
         </div>
@@ -86,32 +84,31 @@ const products = [
 
 function CollectionPage() {
   return (
-    <div className="flex flex-col px-5">
-      <h2 className="self-start text-xl font-semibold tracking-tight leading-7 text-center text-black uppercase">
-        Our products
-      </h2>
-      <div className="flex gap-5 mt-12 w-full uppercase max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-        <h1 className="flex-auto text-8xl font-bold tracking-tighter text-black leading-[86.4px] max-md:max-w-full max-md:text-4xl">
-          Sneak peak into our collections
-        </h1>
-        <button className="justify-center self-end px-8 py-3 mt-28 text-sm font-extrabold leading-5 text-white bg-red-600 tracking-[2px] max-md:px-5 max-md:mt-10">
-          view all
-        </button>
+    <div className="p-20">
+      <div className="flex flex-col">
+        <h2 className=" text-xl font-semibold tracking-tight leading-7 text-start text-black uppercase">
+          Our products
+        </h2>
+        <div className="flex  w-full uppercase max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+          <h1 className="flex-auto text-8xl font-bold tracking-tighter text-black  max-md:max-w-full max-md:text-4xl">
+            Sneak peak into our collections
+          </h1>
+        </div>
+        <section className="mt-10 w-full max-md:mt-10 max-md:max-w-full">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+            {products.slice(0, 3).map((product, index) => (
+              <ProductCard key={index} {...product} />
+            ))}
+          </div>
+        </section>
+        <section className="mt-28 w-full max-md:mt-10 max-md:max-w-full">
+          <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+            {products.slice(3).map((product, index) => (
+              <ProductCard key={index} {...product} />
+            ))}
+          </div>
+        </section>
       </div>
-      <section className="mt-20 w-full max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {products.slice(0, 3).map((product, index) => (
-            <ProductCard key={index} {...product} />
-          ))}
-        </div>
-      </section>
-      <section className="mt-28 w-full max-md:mt-10 max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {products.slice(3).map((product, index) => (
-            <ProductCard key={index} {...product} />
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

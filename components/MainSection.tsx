@@ -11,10 +11,10 @@ function MainSection() {
               <Image
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/956a8f7ef49dbd19b8700e28a8070f5934be49f647208d2932bfcd6267abfd5a?apiKey=36488682b7c54f08ad6c54eaddd3e0a8&"
                 fill
-                className="object-cover absolute inset-0 size-full"
+                className="absolute inset-0 size-full opacity-50 z-50 "
                 alt=""
               />
-              /04
+              <span className="z-0">/04</span>
             </div>
             <div className="mt-52 font-bold tracking-tighter uppercase leading-[90%] max-md:mt-10 max-md:max-w-full max-md:text-4xl">
               Better living
