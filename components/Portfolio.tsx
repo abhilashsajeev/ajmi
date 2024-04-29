@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function Portfolio() {
   return (
-    <div className="flex flex-col pt-20">
+    <div className="flex flex-col pt-18">
       <div className="flex flex-col self-center px-5 mt-36 w-full max-w-[1545px] max-md:mt-10 max-md:max-w-full">
         <div className="text-xl font-semibold tracking-tight leading-7 text-black uppercase max-md:max-w-full">
           Portfolio

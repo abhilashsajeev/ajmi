@@ -1,4 +1,5 @@
 import Banner from "@/components/Banner";
+import CollectionPage from "@/components/Collections/Collection";
 import Footer from "@/components/Footer";
 import HowItWorks from "@/components/HowItWorks";
 import LastSection from "@/components/LastSection";
@@ -13,42 +14,15 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <div className="navbar bg-base-100">
-        <div className="flex-1 ml-3">
-          <LogoIcon style={{ fontSize: "4em" }} />
-        </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1">
-            <li className="font-bold">
-              <a>HOME</a>
-            </li>
-            <li className="font-bold">
-              <a>OUR STORY</a>
-            </li>
-            <li className="font-bold">
-              <a>SERVICES</a>
-            </li>
-            <li className="font-bold">
-              <a>PRODUCTS</a>
-            </li>
-            <li className="font-bold">
-              <a>OUR PROJECTS</a>
-            </li>
-            <li className="font-bold">
-              <a>CONTACT US</a>
-            </li>
-          </ul>
-        </div>
-      </div>
       <MainSection />
       <Banner />
       <Promo />
       <Offer />
+      <CollectionPage />
       <HowItWorks />
       <Portfolio />
 
       <LastSection />
-      <Footer />
     </main>
   );
 }
