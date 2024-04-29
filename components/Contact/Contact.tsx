@@ -63,7 +63,7 @@ const ContactInfo: React.FC<ContactInfoProps> = ({
             <span className="flex-auto my-auto">GOOGLE MAP</span>
           </div>
         </div>
-        <div className="shrink-0 self-start rounded-full bg-stone-50 bg-opacity-10 h-[138px] w-[138px]" />
+        <div className="shrink-0 self-start rounded-full bg-stone-50 bg-opacity-10 h-[138px] w-[138px]"></div>
       </div>
     </div>
   );
