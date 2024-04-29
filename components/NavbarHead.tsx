@@ -19,7 +19,7 @@ export default function NavbarHead() {
             <Link href="/services">SERVICES</Link>
           </li>
           <li className="font-bold">
-            <a>PRODUCTS</a>
+            <Link href="/products">PRODUCTS</Link>
           </li>
           <li className="font-bold">
             <Link href="/our_projects">OUR PROJECTS</Link>

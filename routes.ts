@@ -9,6 +9,7 @@ export const publicRoutes = [
   "/services",
   "/our_projects",
   "/contact",
+  "/products",
 ];
 
 /**
