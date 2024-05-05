@@ -84,24 +84,26 @@ const products = [
 
 function CollectionPage() {
   return (
-    <div className="p-20">
+    <div className="w-full">
       <div className="flex flex-col">
-        <h2 className=" text-xl font-semibold tracking-tight leading-7 text-start text-black uppercase">
-          Our products
-        </h2>
-        <div className="flex  w-full uppercase max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
-          <h1 className="flex-auto text-8xl font-bold tracking-tighter text-black  max-md:max-w-full max-md:text-4xl">
+        <div className="flex w-full uppercase max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+          <h2 className="text-xl font-semibold tracking-tight  text-start text-black uppercase">
+            Our products
+          </h2>
+        </div>
+        <div className="flex w-full uppercase  max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
+          <h1 className="flex-auto text-8xl font-bold  text-black ">
             Sneak peak into our collections
           </h1>
         </div>
-        <section className="mt-10 w-full max-md:mt-10 max-md:max-w-full">
+        <section className="w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             {products.slice(0, 3).map((product, index) => (
               <ProductCard key={index} {...product} />
             ))}
           </div>
         </section>
-        <section className="mt-28 w-full max-md:mt-10 max-md:max-w-full">
+        <section className="w-full">
           <div className="flex gap-5 max-md:flex-col max-md:gap-0">
             {products.slice(3).map((product, index) => (
               <ProductCard key={index} {...product} />
