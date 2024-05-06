@@ -12,7 +12,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   material,
 }) => {
   return (
-    <div className="flex flex-col w-[32%] items-center max-md:ml-0 max-md:w-full">
+    <div className="flex flex-col w-[29%] m-2 justify-center items-center max-md:ml-1 max-md:w-full">
       <div className="flex flex-col grow justify-center max-md:mt-10 max-md:max-w-full">
         <div className="flex overflow-hidden relative flex-col items-end px-16 pt-20 pb-9 w-full min-h-[670px] max-md:pl-5 max-md:max-w-full">
           <img
@@ -84,7 +84,7 @@ const products = [
 
 function CollectionPage() {
   return (
-    <div className="w-full">
+    <div className="w-full m-10">
       <div className="flex flex-col">
         <div className="flex w-full uppercase max-md:flex-wrap max-md:mt-10 max-md:max-w-full">
           <h2 className="text-xl font-semibold tracking-tight  text-start text-black uppercase">
